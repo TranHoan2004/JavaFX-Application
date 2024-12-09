@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://LAPTOP-H0L0INL8\SQLEXPRESS:1433;databaseName=Lab1HSF301;encrypt=false;</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">123</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+		<property name="hibernate.connection.autocommit">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping files (or classes) -->
+        <mapping class="com.hsf301.se1876.lab1.hibernate.entity.Account"/>
+        <mapping class="com.hsf301.se1876.lab1.hibernate.entity.Agent"/>
+        <!-- Alternatively, you can map XML files instead of annotated classes -->
+        <!-- <mapping resource="your-mapping-file.hbm.xml"/> -->
+
+    </session-factory>
+</hibernate-configuration>
