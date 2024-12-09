@@ -38,4 +38,8 @@ public class PasswordEncoding {
         random.nextBytes(saltBytes);
         return Base64.getEncoder().encodeToString(saltBytes);
     }
+
+    public static void main(String[] args) {
+        System.out.println(PasswordEncoding.getEncodingPassword("123456"));
+    }
 }

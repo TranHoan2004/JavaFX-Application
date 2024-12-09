@@ -24,21 +24,22 @@ public class BaseService {
     }
 
     protected void beginTransaction(Session session) throws Exception {
-        if (session != null) {
-            transaction = session.beginTransaction();
+        if (session == null) {
+            throw new Exception("Session is null");
         }
-        throw new Exception("Session is null");
+        transaction = session.beginTransaction();
     }
 
     protected void commitTransaction(Session session) throws Exception {
-        transaction.commit();
-        if (session != null) {
-            transaction.commit();
+        if (session == null) {
+            throw new Exception("Session is null");
         }
-        throw new Exception("Session is null");
+        transaction.commit();
     }
 
     protected void rollbackTransaction(Session session) {
-        transaction.rollback();
+        if (session != null) {
+            transaction.rollback();
+        }
     }
 }

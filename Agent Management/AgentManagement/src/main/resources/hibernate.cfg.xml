@@ -4,7 +4,7 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://LAPTOP-H0L0INL8\SQLEXPRESS:1433;databaseName=Lab1HSF301;encrypt=false;</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://LAPTOP-H0L0INL8\SQLEXPRESS:1433;databaseName=AgentManagement;encrypt=false;</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password">123</property>
 
@@ -29,8 +29,8 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapping files (or classes) -->
-        <mapping class="com.hsf301.se1876.lab1.hibernate.entity.Account"/>
-        <mapping class="com.hsf301.se1876.lab1.hibernate.entity.Agent"/>
+        <mapping class="com.he180030.agentmanagement.model.Account"/>
+        <mapping class="com.he180030.agentmanagement.model.Agent"/>
         <!-- Alternatively, you can map XML files instead of annotated classes -->
         <!-- <mapping resource="your-mapping-file.hbm.xml"/> -->
 

@@ -1,6 +1,8 @@
 package com.he180030.agentmanagement.controller;
 
 import com.he180030.agentmanagement.dto.AccountDTO;
+import com.he180030.agentmanagement.service.AccountService;
+import com.he180030.agentmanagement.service.impl.AccountServiceImpl;
 import com.he180030.agentmanagement.utils.InputValidation;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +24,11 @@ public class LoginController implements Initializable {
     private TextField password;
     @FXML
     private Button loginBtn;
+    private final AccountService accountService;
+
+    public LoginController() {
+        this.accountService = new AccountServiceImpl();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -34,6 +41,7 @@ public class LoginController implements Initializable {
 
                 // verify account
                 AccountDTO account = new AccountDTO();
+
             } catch (Exception e) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, e.getMessage());
                 message.setText(e.getMessage());
