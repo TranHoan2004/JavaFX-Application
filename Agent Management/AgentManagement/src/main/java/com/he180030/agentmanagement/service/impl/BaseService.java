@@ -23,17 +23,11 @@ public class BaseService {
         return sessionFactory.getCurrentSession();
     }
 
-    protected void beginTransaction(Session session) throws Exception {
-        if (session == null) {
-            throw new Exception("Session is null");
-        }
+    protected void beginTransaction(Session session) {
         transaction = session.beginTransaction();
     }
 
-    protected void commitTransaction(Session session) throws Exception {
-        if (session == null) {
-            throw new Exception("Session is null");
-        }
+    protected void commitTransaction(Session session) {
         transaction.commit();
     }
 

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="399.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.he180030.agentmanagement.controller.AgentController">
+   <children>
+      <HBox layoutX="-1.0" layoutY="1.0" prefHeight="95.0" prefWidth="697.0">
+         <children>
+            <ImageView fx:id="image" fitHeight="97.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../static/images/img.png" />
+               </image></ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="95.0" prefWidth="562.0" text="Agent Management">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <GridPane layoutX="61.0" layoutY="105.0" prefHeight="215.0" prefWidth="444.0" AnchorPane.rightAnchor="133.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.199951171875" minWidth="10.0" prefWidth="131.99998779296874" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="415.6000213623047" minWidth="10.0" prefWidth="343.20001220703125" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="17.600012207031256" minHeight="10.0" prefHeight="14.400000000000006" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.400000000000006" minHeight="10.0" prefHeight="30.400000000000006" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="18.0" prefWidth="344.0" text="Create a new agent" GridPane.columnIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="108.0" text="Agent's Name:" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="108.0" text="Enrolled Date:" GridPane.rowIndex="6" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="108.0" text="Balance:" GridPane.rowIndex="5" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="108.0" text="Status:" GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="108.0" text="Address:" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="108.0" text="Email:" GridPane.rowIndex="2" />
+            <Button fx:id="saveBtn" mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets top="15.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="name" prefHeight="14.0" prefWidth="335.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="address" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="balance" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="enrolledDate" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </TextField>
+            <Label fx:id="message" prefHeight="18.0" prefWidth="334.0" text="Showing from 0 to 0 of 0 drivers" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <ComboBox fx:id="status" prefWidth="150.0" promptText="NEW" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Separator layoutX="-1.0" layoutY="330.0" prefHeight="10.0" prefWidth="698.0" />
+      <GridPane fx:id="table" layoutX="-3.0" layoutY="340.0" prefHeight="62.0" prefWidth="697.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.999951171875" minWidth="10.0" prefWidth="25.200008392333984" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.1999855041504" minWidth="10.0" prefWidth="185.40001220703127" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.59999999999997" minWidth="10.0" prefWidth="235.8" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.7999877929687" minWidth="10.0" prefWidth="154.20000000000005" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="64.79998779296875" minHeight="10.0" prefHeight="23.00001220703125" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="26.199987792968752" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="27.599951171875006" minHeight="10.0" prefHeight="21.599987792968747" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="18.0" prefWidth="196.0" text="\@2015 Copyright of ABC Com." GridPane.columnIndex="1" />
+            <Label prefHeight="18.0" prefWidth="196.0" text="Contact:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="18.0" prefWidth="196.0" text="Address:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Hyperlink text="Introduction" />
+                  <Separator orientation="VERTICAL" prefHeight="24.0" prefWidth="12.0" />
+                  <Hyperlink text="Help" />
+                  <Separator orientation="VERTICAL" prefHeight="24.0" prefWidth="12.0" />
+                  <Hyperlink text="Job Opportunity" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
