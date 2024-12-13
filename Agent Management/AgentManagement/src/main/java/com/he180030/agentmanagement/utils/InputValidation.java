@@ -106,10 +106,11 @@ public class InputValidation {
         return true;
     }
 
-    public static void isRightEmailFormat(String email) throws Exception {
-        if (!email.matches("^[A-Za-z](.*)([@]{1})(.{2,})(\\.)(.{2,})")) {
-            throw new Exception("Must follow the format <account name>@<domain");
+    public static void isRightEmailFormat(String email, String regex, String error) throws Exception {
+        if (!email.matches(regex)) {
+            throw new Exception(error);
         }
     }
+
 
 }
